@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Transaction | Personal Finance Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container p-3 d-flex justify-content-center ">
+        <div class="card form-card p-4">
+            <header class="mb-4">
+                <h1 class="h4 fw-bold mb-1">Add Transaction</h1>
+                <p class="text-muted small">Record your latest financial activity.</p>
+            </header>
+
+            <form action="#" method="POST" id="transactionForm">
+                <div class="mb-4">
+                    <label class="form-label fw-semibold small text-uppercase text-secondary">Transaction Type</label>
+                    <div class="row g-2">
+                        <div class="col">
+                            <input type="radio" class="btn-check" name="transaction_type" id="type-expense"
+                                value="expense" checked>
+                            <label class="btn btn-outline-brand w-100 py-2" for="type-expense">Expense</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" class="btn-check" name="transaction_type" id="type-income"
+                                value="income">
+                            <label class="btn btn-outline-brand w-100 py-2" for="type-income">Income</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="amount" class="form-label fw-semibold">Amount</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-muted">$</span>
+                        <input type="number" class="form-control border-start-0" id="amount" name="amount"
+                            placeholder="0.00" step="0.01" inputmode="decimal" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label fw-semibold">Category</label>
+                    <select class="form-select" id="category" name="category" required>
+                        <option disabled selected value="">Select a category</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date" class="form-label fw-semibold">Date</label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="note" class="form-label fw-semibold">Note <span
+                            class="text-muted fw-normal fs-7">(Optional)</span></label>
+                    <textarea class="form-control" id="note" name="note" rows="3"
+                        placeholder="Add details..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-brand w-100 text-dark">
+                    Add Transaction
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
