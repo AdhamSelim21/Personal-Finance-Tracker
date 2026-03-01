@@ -5,10 +5,6 @@ const balanceCard = document.getElementById("balanceCard");
 
 render();
 
-
-
-
-
 function totalIncome() {
   let total = 0;
   state.transactions.forEach((transaction) => {
@@ -33,11 +29,9 @@ function currentBalance() {
   return totalIncome() - totalExpense();
 }
 
-// local storage
 
-let state = JSON.parse(localStorage.getItem("savedData")) || {
-  transactions: [],
-};
+
+// local storage
 
 function render() {
   localStorage.setItem("savedData", JSON.stringify(state));
@@ -55,7 +49,7 @@ function render() {
     }
   }
   if (balanceCard) {
-    const balanceValue = balanceCard.querySelector(".text-dark");
+    const balanceValue = balanceCard.querySelector(".balance");
     if (balanceValue) {
       balanceValue.textContent = `$${currentBalance().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     }
@@ -64,3 +58,7 @@ function render() {
     container.innerHTML = "<p>No transactions found.</p>";
   }
 }
+
+let state = JSON.parse(localStorage.getItem("savedData")) || {
+  transactions: [],
+};
