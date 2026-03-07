@@ -1,6 +1,4 @@
-
 const listTransaction = document.getElementById("listTransaction");
-
 
 let state = JSON.parse(localStorage.getItem("transactions")) || [];
 
@@ -8,9 +6,6 @@ function setTransactions(transactions) {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 setTransactions(state);
-
-
-
 
 function TransactionList() {
   listTransaction.innerHTML = "";
@@ -23,27 +18,27 @@ function TransactionList() {
 
   state.forEach((transaction) => {
     let list = document.createElement("li");
-    list.className = "transaction-item row align-items-center m-0";
+    list.className = "transaction-item";
 
     let span = document.createElement("span");
     span.textContent = transaction.category + " ";
-    span.className = "col-md-6 col-8 d-flex align-items-center p-0 fw-bold ";
+    span.className = "transaction-category";
 
     let dateSpan = document.createElement("span");
-    dateSpan.className = "col-4 text-end ";
+    dateSpan.className = "transaction-date";
     const displayDate = new Date(transaction.date);
     dateSpan.textContent = isNaN(displayDate)
       ? "No Date"
       : displayDate.toLocaleDateString();
 
     let amountSpan = document.createElement("span");
-    amountSpan.className = "col-2 text-end";
+    amountSpan.className = "transaction-amount";
     amountSpan.textContent = ` $${transaction.amount.toFixed(2)} `;
     amountSpan.style.color = transaction.type === "income" ? "green" : "red";
 
     let deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = '<image src="images/delete-button.png" alt="Delete" >';
-    deleteBtn.className = "btn btn-link text-secondary p-0 border-0 ";
+    deleteBtn.className = "delete-btn";
     deleteBtn.onclick = function () {
       state = state.filter((item) => item.id !== transaction.id);
       setTransactions(state);

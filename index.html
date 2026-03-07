@@ -29,7 +29,7 @@
                 <div>
             <label class="small fw-bold text-muted text-uppercase mb-2 d-block">Select Reporting Period</label>
             <select class="form-select form-select-custom border-secondary-subtle" title="Select Reporting Period" id="periodSelect">
-                <option selected></option>
+                    <!-- options will be dynamically inserted here by JavaScript -->
             </select>
             </div>
             </div>
@@ -38,29 +38,19 @@
         <section class="row g-4">
             <div class="col-12 col-md-4">
                 <div class="custom-card" id="incomeCard">
-                    <span class="small fw-bold text-muted text-uppercase">Total Income</span>
-                    <h2 class="display-6 fw-bold card-income mt-1">$5,000.00</h2>
-                    <div class="mt-3">
-                        <span class="badge badge-income rounded-pill">+12% vs last mo</span>
-                    </div>
+                    <!-- Transactions will be dynamically inserted here by JavaScript -->
                 </div>
             </div>
 
             <div class="col-12 col-md-4">
                 <div class="custom-card" id="expenseCard">
-                    <span class="small fw-bold text-muted text-uppercase">Total Expenses</span>
-                    <h2 class="display-6 fw-bold card-expense mt-1">$2,300.00</h2>
-                    <div class="mt-3">
-                        <span class="badge badge-expense rounded-pill">-5% vs last mo</span>
-                    </div>
+                    <!-- Transactions will be dynamically inserted here by JavaScript -->
                 </div>
             </div>
 
             <div class="col-12 col-md-4">
                 <div class="custom-card balance-highlight" id="balanceCard">
-                    <span class="small fw-bold text-muted text-uppercase">Current Balance</span>
-                    <h2 class="display-6 fw-bold text-dark mt-1 balance">$2,700.00</h2>
-                    <p class="small text-muted fst-italic mt-3 mb-0">Available to spend or save</p>
+                    <!-- Transactions will be dynamically inserted here by JavaScript -->
                 </div>
             </div>
         </section>
@@ -69,12 +59,12 @@
             <div class="bg-white border rounded-3 overflow-hidden shadow-sm">
                 <div class="px-4 py-3 border-bottom d-flex justify-content-between align-items-center">
                     <h2 class="h6 fw-bold mb-0">Recent Activity</h2>
-                    <a href="#" class="text-decoration-none small fw-bold viewBtn">View
+                    <a href="Transaction-List.html" class="text-decoration-none small fw-bold viewBtn">View
                         All</a>
                 </div>
 
-                <div class="p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="list-group list-group-flush" id="listTransaction">
+                    <!-- <div class="d-flex justify-content-between align-items-center mb-4">
                         <div class="d-flex align-items-center gap-3">
                             <div class="bg-light p-2 rounded text-center logo">🛒</div>
                             <div>
@@ -94,7 +84,7 @@
                             </div>
                         </div>
                         <span class="fw-bold text-success">+$5,000.00</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

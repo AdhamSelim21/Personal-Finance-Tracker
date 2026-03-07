@@ -6,7 +6,6 @@ const categoryTransaction = document.getElementById("category");
 const dateTransaction = document.getElementById("date");
 const noteTransaction = document.getElementById("note");
 
-
 const categories = ["Rent", "Food", "Utilities"];
 function populateCategory() {
   categoryTransaction.innerHTML = "";
@@ -27,7 +26,6 @@ function setTransactions(transactions) {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 setTransactions(state);
-
 
 transactionForm.addEventListener("submit", function (e) {
   e.preventDefault();
